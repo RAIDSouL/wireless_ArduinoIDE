@@ -20,12 +20,39 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if ( millis() - lastMillis1 > 100 ){
+  matrix.setTextSize(1);
+  matrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely
+  matrix.setTextColor(LED_ON);
+  matrix.setRotation(1);
+  if ( millis() - lastMillis1 > 5000){
     for(int8_t x=7; x>=-100; x--){
       matrix.clear();
       matrix.setCursor(x,0);
       matrix.print("Hello World!");
       matrix.writeDisplay();
+      delay(100);
     }
+  lastMillis1 = millis();
+  }
+  if ( millis() - lastMillis2 > 1200){
+    digitalWrite(17,HIGH);
+    delay(100);
+    digitalWrite(2,HIGH);
+    delay(100);
+    digitalWrite(15,HIGH);
+    delay(100);
+    digitalWrite(12,HIGH);
+    delay(300);
+    
+    // ปิด LED
+    digitalWrite(17,LOW);
+    delay(100);
+    digitalWrite(2,LOW);
+    delay(100);
+    digitalWrite(15,LOW);
+    delay(100);
+    digitalWrite(12,LOW);
+    delay(300);
+    lastMillis2 = millis();
   }
 }
