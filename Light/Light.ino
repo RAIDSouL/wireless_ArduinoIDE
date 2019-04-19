@@ -16,7 +16,7 @@ void setup() {
 
 void loop() {
   // เปิด LED
-  matrix.setTextSize(1);
+   matrix.setTextSize(1);
   matrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely
   matrix.setTextColor(LED_ON);
   matrix.setRotation(1);
